@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad | Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+      }
+      .social-icon {
+        transition: 0.5s;
+        background: linear-gradient(to top, #3b82f6, #6366f1);
+        background-size: 100% 200%;
+        background-position: 0 100%;
+      }
+      .social-icon:hover {
+        background-position: 0 0;
+        color: white;
+      }
+      .ornament {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        opacity: 0.1;
+        filter: blur(80px);
+        z-index: 0;
+      }
+
+      .stars {
+        background: radial-gradient(white 1px, transparent 1px);
+        background-size: 20px 20px;
+        animation: starAnimation 60s linear infinite;
+      }
+
+      @keyframes starAnimation {
+        from { background-position: 0 0; }
+        to { background-position: 1000px 1000px; }
+      }
+
+      .section-bg-pattern {
+        position: relative;
+      }
+
+      .section-bg-pattern::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+        opacity: 0.05;
+        z-index: 0;
+      }
+
+      .z-top {
+        position: relative;
+        z-index: 10;
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-black relative overflow-x-hidden stars">
+    <div class="ornament top-10 left-10"></div>
+    <div class="ornament top-1/2 right-10"></div>
+
+    <header class="fixed w-full bg-white shadow z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <h1 class="text-xl font-bold">MUHAMMAD</h1>
+        <button id="menu-btn" class="md:hidden text-xl">☰</button>
+        <ul id="menu" class="hidden md:flex space-x-6">
+          <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+          <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
+          <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+          <li><a href="#certificate" class="hover:text-blue-600 transition">Certificates</a></li>
+          <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section id="home" class="h-screen flex items-center justify-center flex-col text-center px-4 gradient-bg text-white relative overflow-hidden" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4 animate-pulse">Muhammad</h2>
+      <p class="text-xl text-gray-200 mb-8">Web Developer & Software Engineer</p>
+      <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-200 transition">Hire Me</a>
+
+      <div class="absolute bottom-10 flex space-x-6">
+        <div class="group relative">
+          <a href="https://x.com/IsmailShes45858" class="w-12 h-12 rounded-full flex items-center justify-center social-icon">
+      <img src="data:image/png;base64,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" alt="X" class="w-6 h-6">
+
+          </a>
+          <span class="absolute text-xs text-white bg-black bg-opacity-70 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition -bottom-6 left-1/2 -translate-x-1/2">Twitter/X</span>
+        </div>
+        <div class="group relative">
+          <a href="https://www.instagram.com/mhmd1_602?igsh=MWluY29lbXozaWpheA==" class="w-12 h-12 rounded-full flex items-center justify-center social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="w-6 h-6">
+          </a>
+          <span class="absolute text-xs text-white bg-black bg-opacity-70 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition -bottom-6 left-1/2 -translate-x-1/2">Instagram</span>
+        </div>
+        <div class="group relative">
+          <a href="https://www.instagram.com/mhmd1_602?igsh=MWluY29lbXozaWpheA==" class="w-12 h-12 rounded-full flex items-center justify-center social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="w-6 h-6">
+          </a>
+          <span class="absolute text-xs text-white bg-black bg-opacity-70 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition -bottom-6 left-1/2 -translate-x-1/2">GitHub</span>
+        </div>
+               <div class="group relative">
+          <a href="https://www.youtube.com/@SmartAppliances326" class="w-12 h-12 rounded-full flex items-center justify-center social-icon">
+            <img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" alt="Gmail" class="w-6 h-6 bg-transparent">
+          </a>
+          <span class="absolute text-xs text-white bg-black bg-opacity-70 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition -bottom-6 left-1/2 -translate-x-1/2">youtube</span>
+        </div>
+        <div class="group relative">
+          <a href="mailto:muhammad.160209@gmail.com" class="w-12 h-12 rounded-full flex items-center justify-center social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" class="w-6 h-6">
+          </a>
+          <span class="absolute text-xs text-white bg-black bg-opacity-70 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition -bottom-6 left-1/2 -translate-x-1/2">Gmail</span>
+        </div>
+ 
+      </div>
+    </section>
+
+    <section id="about" class="py-20 max-w-5xl mx-auto px-4" data-aos="fade-up">
+      <h3 class="text-3xl font-bold mb-6 text-center">About Me</h3>
+      <p class="text-center max-w-3xl mx-auto">I am a passionate web developer with experience in creating modern and responsive web applications. My focus is on clean code and elegant UI/UX.</p>
+    </section>
+
+    <section id="services" class="py-20 bg-gradient-to-r from-blue-50 to-purple-100 px-4" data-aos="fade-up">
+      <h3 class="text-3xl font-bold mb-6 text-center">What I Do</h3>
+      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+          <h4 class="font-bold text-xl mb-2">Web Development</h4>
+          <p class="text-gray-600">Modern websites with Laravel, TailwindCSS, Vue.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+          <h4 class="font-bold text-xl mb-2">UI/UX Design</h4>
+          <p class="text-gray-600">Elegant and clean user interfaces focused on user experience.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+          <h4 class="font-bold text-xl mb-2">System Integration</h4>
+          <p class="text-gray-600">Connecting systems and APIs seamlessly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-50 px-4" data-aos="fade-up">
+      <h3 class="text-3xl font-bold mb-6 text-center">Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="image/project1.png  " alt="Project" class="w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-2">Pelita Smart is an innovative web platform I developed, inspired by Pijar Belajar, to revolutionize the learning and teaching process. This project facilitates efficient online exam management and provides diverse digital learning resources such as video tutorials and e-books, creating an integrated learning hub.</h4>
+            <p class="text-gray-500 text-sm mb-4">Laravel, TailwindCSS, MySQL</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/muhammadgqganteng/Pelita-Smart" class="text-blue-600 hover:underline">GitHub</a>
+              <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+                <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://simplefreethemes.com/wp-content/uploads/2021/05/How-to-Code-a-Logo-in-HTML.jpg " alt="Project" class="w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-2">A collection of small projects and coding exercises that reflect my passion for problem-solving, algorithms, and improving my programming logic</h4>
+            <p class="text-gray-500 text-sm mb-4">Laravel, TailwindCSS, MySQL, python,JavaScript, Dart</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/muhammadgqganteng" class="text-blue-600 hover:underline">GitHub</a>
+              <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://logo.com/image-cdn/images/kts928pd/production/4d57e064de16f884d2279fe189f5f98c33ce6014-731x731.jpg?w=1080&q=72&fm=webp" alt="Project" class="w-[250px] h-[250px] object-cover mx-auto">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-2">One of my early projects was creating a CRUD application, where I practiced handling user data through common operations such as create, read, update, and delete. This helped strengthen my skills in database design, form handling, and REST API development.</h4>
+            <p class="text-gray-500 text-sm mb-4">Laravel,MySQL, python,JavaScript, Dart</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-blue-600 hover:underline">GitHub</a>
+              <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+                        <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://media.istockphoto.com/id/1169856943/id/vektor/vektor-islam-kuran-ramadhan-simbolisme-arab-islam.jpg?s=612x612&w=0&k=20&c=76GQucdo1uyzLHk4XfIlanzqJjtSa1a8HiG-xi8jQ6E= " alt="Project" class="w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-2">This project is a Qur'an website built without any external APIs. All surahs and ayahs are stored locally, allowing users to browse and read the Qur'an smoothly. The project focuses on clean code, structured data management, and responsive design.</h4>
+            <p class="text-gray-500 text-sm mb-4">PHP Native, Boostrap, MySQL, JavaScript.</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/muhammadgqganteng" class="text-blue-600 hover:underline">GitHub</a>
+              <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificate" class="py-20 bg-white px-4 section-bg-pattern z-top" data-aos="zoom-in-up">
+      <h3 class="text-3xl font-bold mb-6 text-center">Certificates</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="p-4 shadow rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white bg-opacity-90">
+          <img src="image/ser1.png" alt="Certificate 1" class="rounded mb-4 w-40 center mx-auto">
+          <h4 class="font-bold">Fullstack Web Developer</h4>
+          <p class="text-sm text-gray-500">Issued by assyifa, 2024</p>
+        </div>
+        <div class="p-4 shadow rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white bg-opacity-90">
+          <img src="image/ser2-1.png" alt="Certificate 2" class="rounded mb-4">
+          <h4 class="font-bold">UI/UX Design Basics</h4>
+          <p class="text-sm text-gray-500">Issued by myskill, 2024</p>
+        </div>
+             <div class="p-4 shadow rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white bg-opacity-90">
+          <img src="image/ser3.png" alt="Certificate 2" class="rounded mb-4 center mx-auto">
+          <h4 class="font-bold">5 Myskill  Specialization
+Certificate</h4>
+          <p class="text-sm text-gray-500">Issued by myskill, 2024</p>
+        </div>
+             <div class="p-4 shadow rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white bg-opacity-90">
+          <img src="image/ser3.png" alt="Certificate 2" class="rounded mb-4 center mx-auto">
+          <h4 class="font-bold">57 Myskill Completion
+Certificate</h4>
+          <p class="text-sm text-gray-500">Issued by myskill, 2024</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 max-w-3xl mx-auto px-4 section-bg-pattern z-top" data-aos="zoom-in-up">
+      <h3 class="text-3xl font-bold mb-6 text-center">Contact</h3>
+      <form class="space-y-6">
+        <input type="text" placeholder="Name" class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600">
+        <input type="email" placeholder="Email" class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600">
+        <textarea placeholder="Message" class="w-full border border-gray-300 p-3 rounded h-32 focus:ring-2 focus:ring-blue-600"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Send Message</button>
+      </form>
+    </section>
+
+    <footer class="text-center py-6 text-gray-500 text-sm">© 2025 Muhammad. All rights reserved.</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      const menuBtn = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        menu.classList.toggle('flex-col');
+        menu.classList.toggle('absolute');
+        menu.classList.toggle('bg-white');
+        menu.classList.toggle('top-16');
+        menu.classList.toggle('right-4');
+        menu.classList.toggle('p-4');
+        menu.classList.toggle('space-y-2');
+      });
+
+      //
+      const starCount = 20;
+      for (let i = 0; i < starCount; i++) {
+        const span = document.createElement('span');
+        span.className = "absolute bg-white rounded-full";
+        span.style.width = "4px";
+        span.style.height = "4px";
+        span.style.top = Math.random() * window.innerHeight + "px";
+        span.style.left = Math.random() * window.innerWidth + "px";
+        span.style.opacity = Math.random();
+        span.style.animation = `twinkle ${5 + Math.random() * 5}s infinite ease-in-out`;
+        document.body.appendChild(span);
+      }
+    </script>
+  </body>
+</html>
