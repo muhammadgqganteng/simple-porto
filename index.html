@@ -245,15 +245,64 @@ Certificate</h4>
       </div>
     </section>
 
-    <section id="contact" class="py-20 max-w-3xl mx-auto px-4 section-bg-pattern z-top" data-aos="zoom-in-up">
-      <h3 class="text-3xl font-bold mb-6 text-center">Contact</h3>
-      <form class="space-y-6">
-        <input type="text" placeholder="Name" class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600">
-        <input type="email" placeholder="Email" class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600">
-        <textarea placeholder="Message" class="w-full border border-gray-300 p-3 rounded h-32 focus:ring-2 focus:ring-blue-600"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Send Message</button>
-      </form>
-    </section>
+ <section id="contact" class="py-20 max-w-3xl mx-auto px-4 section-bg-pattern z-top" data-aos="zoom-in-up">
+  <h3 class="text-3xl font-bold mb-6 text-center">Contact</h3>
+  <form id="contactForm" class="space-y-6" action="https://script.google.com/macros/s/AKfycbzBk17ZkwfBScoIzLSzVuMdIsfodrEWBgSXQw1gZGbqNVXBMsaOPF_KSNMsMcIp5hesdQ/exec" method="POST">
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Name" 
+      class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600"
+      required
+    >
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Email" 
+      class="w-full border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600"
+      required
+    >
+    <textarea 
+      name="message" 
+      placeholder="Message" 
+      class="w-full border border-gray-300 p-3 rounded h-32 focus:ring-2 focus:ring-blue-600"
+      required
+    ></textarea>
+    <button 
+      type="submit" 
+      class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+    >
+      Send Message
+    </button>
+  </form>
+</section>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
+  try {
+    const response = await fetch(e.target.action, {
+      method: "POST",
+      body: new FormData(e.target),
+      headers: { "Accept": "application/json" }
+    });
+    
+    const result = await response.json();
+    
+    if (result.status === "success") {
+      alert("Pesan berhasil dikirim!");
+      e.target.reset(); 
+    } else {
+      alert("Gagal mengirim pesan: " + result.error);
+    }
+  } catch (error) {
+    alert("Error: Pastikan Google Script sudah di-deploy dengan benar");
+  }
+});
+</script>
+    
 
     <footer class="text-center py-6 text-gray-500 text-sm">© 2025 Muhammad. All rights reserved.</footer>
 
