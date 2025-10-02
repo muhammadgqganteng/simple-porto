@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad | Web Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="dist/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://png.pngtree.com/png-clipart/20200722/original/pngtree-letter-m-mm-monogram-logo-design-minimal-png-image_5061069.jpg" type="image/x-icon">
@@ -160,9 +160,9 @@
       </div>
     </section>
 
-    <section id="projects" class="py-20 bg-gray-50 px-4" data-aos="fade-up">
+    <section id="projects" class="py-20 bg-gray-50 px-4 " data-aos="fade-up">
       <h3 class="text-3xl font-bold mb-6 text-center">Projects</h3>
-      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
         <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
           <img src="image/project1.png  " alt="Project" class="w-full">
           <div class="p-4">
@@ -239,14 +239,28 @@ KlikShop is a simple yet modern e-commerce mobile application built using Flutte
         </div>
       </div>
 
-        
+      <div class="mt-8 flex justify-center  ">
+        <a href="project/more_project.html" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 p-6">
+          See more Projects
+          <svg
+            class="animate-pulse"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
 
 
     </section>
 
     <section id="certificate" class="py-20 bg-white px-4 section-bg-pattern z-top" data-aos="zoom-in-up">
       <h3 class="text-3xl font-bold mb-6 text-center">Certificates</h3>
-      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
         <div class="p-4 shadow rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition duration-300 bg-white bg-opacity-90">
           <img src="image/ser1.png" alt="Certificate 1" class="rounded mb-4 w-40 center mx-auto">
           <h4 class="font-bold">Fullstack Web Developer</h4>
@@ -276,6 +290,21 @@ Certificate</h4>
 Certificate</h4>
           <p class="text-sm text-gray-500">Issued by myskill, 2024</p>
         </div>
+      </div>
+      
+      <div class="mt-8 flex justify-center  ">
+        <a href="project/more_project.html" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 p-6">
+          See more Sertificates
+          <svg
+            class="animate-pulse"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </section>
 
